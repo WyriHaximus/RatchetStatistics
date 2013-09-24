@@ -1,0 +1,27 @@
+{
+  "name": "WyriHaximus/RatchetStatistics",
+  "version": "0.0.1",
+  "description": "No description",
+  "type": "cakephp-plugin",
+  "keywords": [
+    "cakephp"
+  ],
+  "homepage": "http://github.com/WyriHaximus/RatchetStatistics",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cees-Jan kiewiet",
+      "role": "Maintainer"
+    },
+  ],
+  "require": {
+    "composer/installers": "*"
+  },
+  "support": {
+    "issues": "https://github.com/WyriHaximus/RatchetStatistics/issues",
+    "source": "https://github.com/WyriHaximus/RatchetStatistics"
+  },
+  "extra": {
+    "installer-name": "RatchetStatistics"
+  }
+}
