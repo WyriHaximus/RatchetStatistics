@@ -1,21 +1,31 @@
 {
-  "name": "WyriHaximus/RatchetStatistics",
-  "version": "0.0.1",
-  "description": "No description",
+  "name": "wyrihaximus/ratchet-statistics",
+  "version": "0.1.0-DEV",
+  "description": "Gathers statistics from wyrihaximus/ratchet.",
   "type": "cakephp-plugin",
   "keywords": [
-    "cakephp"
+    "cakephp",
+    "ratchet",
+    "munin",
+    "nagios"
   ],
   "homepage": "http://github.com/WyriHaximus/RatchetStatistics",
   "license": "MIT",
   "authors": [
     {
       "name": "Cees-Jan kiewiet",
-      "role": "Maintainer"
-    },
+      "email": "ceesjank@gmail.com",
+      "role": "Maintainer",
+      "homepage": "http://wyrihaximus.net/"
+    }
   ],
   "require": {
-    "composer/installers": "*"
+      "composer/installers": "*",
+      "wyrihaximus/ratchet": "*",
+      "wyrihaximus/ratchet-commands": "*"
+  },
+  "suggest": {
+      "wyrihaximus/phunin-cake": "0.1.0"
   },
   "support": {
     "issues": "https://github.com/WyriHaximus/RatchetStatistics/issues",

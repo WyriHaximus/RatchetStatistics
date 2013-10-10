@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-App::uses('TransportProxy', 'Ratchet.Lib/MessageQueue/Transports');
+App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
 App::uses('RatchetMessageQueueGetConnectionsCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('AbstractRatchetPhuninPlugin', 'RatchetStatistics.Lib/Phunin');
 
-class RatchetPhuninConnections implements \PhuninNode\Interfaces\Plugin {
+class RatchetPhuninConnections extends AbstractRatchetPhuninPlugin implements \PhuninNode\Interfaces\Plugin {
     
     /**
      * PhuninNode server
@@ -89,7 +90,7 @@ class RatchetPhuninConnections implements \PhuninNode\Interfaces\Plugin {
      */
     public function getValues(\React\Promise\DeferredResolver $deferredResolver) {
         $command = new RatchetMessageQueueGetConnectionsCommand();
-        $command->setDeferedResolver($deferredResolver);
+        $command->setDeferedResolver($this->resultDecorator($deferredResolver));
         $command->setHash(Security::hash(serialize(Configure::read('PhuninCake.Node')), 'sha256', true));
         TransportProxy::instance()->queueMessage($command);
     }
