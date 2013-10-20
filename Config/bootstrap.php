@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of Ratchet for CakePHP.
- *
- ** (c) 2012 - 2013 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+* This file is part of Ratchet for CakePHP.
+*
+** (c) 2012 - 2013 Cees-Jan Kiewiet
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 App::uses('CakeEventManager', 'Event');
 
@@ -29,11 +29,11 @@ CakeEventManager::instance()->attach(new RatchetPubSubStatisticsListener());
 
 /**
  * PhuninCake listener
- * 
+ *
  * (Make sure PhuninCake is loaded before Ratchet is!)
  */
 
 if (CakePlugin::loaded('PhuninCake')) {
-    App::uses('RatchetPhuninCakeListener', 'RatchetStatistics.Event');
-    CakeEventManager::instance()->attach(new RatchetPhuninCakeListener());
+	App::uses('RatchetPhuninCakeListener', 'RatchetStatistics.Event');
+	CakeEventManager::instance()->attach(new RatchetPhuninCakeListener());
 }
