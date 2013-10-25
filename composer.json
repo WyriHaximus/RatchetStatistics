@@ -21,8 +21,8 @@
   ],
   "require": {
       "composer/installers": "*",
-      "wyrihaximus/ratchet": "*",
-      "wyrihaximus/ratchet-commands": "*"
+      "wyrihaximus/ratchet": "dev-master",
+      "wyrihaximus/ratchet-commands": "dev-master"
   },
   "require-dev": {
       "wyrihaximus/phunin-cake": "0.1.0"
