@@ -24,6 +24,9 @@
       "wyrihaximus/ratchet": "*",
       "wyrihaximus/ratchet-commands": "*"
   },
+  "require-dev": {
+      "wyrihaximus/phunin-cake": "0.1.0"
+  },
   "suggest": {
       "wyrihaximus/phunin-cake": "0.1.0"
   },
