@@ -25,7 +25,7 @@
       "wyrihaximus/ratchet-commands": "dev-master"
   },
   "require-dev": {
-      "wyrihaximus/phunin-cake": "0.1.0"
+      "wyrihaximus/phunin-cake": "dev-master"
   },
   "suggest": {
       "wyrihaximus/phunin-cake": "0.1.0"
