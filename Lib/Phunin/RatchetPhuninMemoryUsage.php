@@ -10,7 +10,7 @@
  */
 
 App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
-App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 App::uses('AbstractRatchetPhuninPlugin', 'RatchetStatistics.Lib/Phunin');
 
 class RatchetPhuninMemoryUsage extends AbstractRatchetPhuninPlugin implements \PhuninNode\Interfaces\Plugin {

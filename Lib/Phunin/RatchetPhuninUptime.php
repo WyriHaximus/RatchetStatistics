@@ -10,7 +10,7 @@
  */
 
 App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
-App::uses('RatchetMessageQueueGetUptimeCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('RatchetMessageQueueGetUptimeCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 App::uses('AbstractRatchetPhuninPlugin', 'RatchetStatistics.Lib/Phunin');
 
 class RatchetPhuninUptime extends AbstractRatchetPhuninPlugin implements \PhuninNode\Interfaces\Plugin {

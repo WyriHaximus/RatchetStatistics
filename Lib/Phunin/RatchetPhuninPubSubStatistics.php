@@ -10,7 +10,7 @@
  */
 
 App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
-App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'Ratchet.Lib/MessageQueue/Command/Statistics');
+App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'RatchetStatistics.Lib/MessageQueue/Command/Statistics');
 App::uses('AbstractRatchetPhuninPlugin', 'RatchetStatistics.Lib/Phunin');
 
 class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implements \PhuninNode\Interfaces\Plugin {
