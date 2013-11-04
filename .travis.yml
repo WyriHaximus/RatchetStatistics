@@ -27,9 +27,11 @@ matrix:
         - DB=mysql CAKE_VERSION=master FOC_VALIDATE=1
 
 before_script:
+  - sh -c "cd ../../"
   - git clone https://github.com/mkoppanen/php-zmq.git
   - sh -c "cd php-zmq && phpize && ./configure && make --silent && sudo make install && cd ../"
   - echo "extension=zmq.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+  - sh -c "cd WyriHaximus/RatchetStatistics"
   - git clone https://github.com/WyriHaximus/travis.git --depth 1 ../travis
   - ../travis/before_script.sh
 
