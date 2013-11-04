@@ -36,5 +36,8 @@
   },
   "extra": {
     "installer-name": "RatchetStatistics"
+  },
+  "config": {
+    "vendor-dir": "Vendor"
   }
 }
