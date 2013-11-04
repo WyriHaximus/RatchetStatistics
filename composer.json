@@ -1,7 +1,7 @@
 {
   "name": "wyrihaximus/ratchet-statistics",
   "version": "0.1.0-DEV",
-  "description": "Gathers statistics from wyrihaximus/ratchet.",
+  "description": "Gathers metrics/statistics from wyrihaximus/ratchet.",
   "type": "cakephp-plugin",
   "keywords": [
     "cakephp",
