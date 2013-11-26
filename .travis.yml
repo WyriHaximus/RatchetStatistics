@@ -8,6 +8,7 @@ env:
   global:
     - REPO_NAME=RatchetStatistics
     - PLUGIN_NAME=RatchetStatistics
+    - COMPOSER_VENDOR=Vendor
     - REQUIRE=""
 
   matrix:
