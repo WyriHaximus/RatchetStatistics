@@ -55,12 +55,12 @@ class RatchetPhuninCakeListener implements CakeEventListener {
  * @param CakeEvent $event
  */
 	public function start(CakeEvent $event) {
-		$this->_loop = $event->data['loop'];
+		$this->__loop = $event->data['loop'];
 		$this->__node = $event->data['node'];
 
-		$this->__node->addPlugin(new RatchetPhuninConnections($this->_loop));
-		$this->__node->addPlugin(new RatchetPhuninUptime($this->_loop));
-		$this->__node->addPlugin(new RatchetPhuninMemoryUsage($this->_loop));
-		$this->__node->addPlugin(new RatchetPhuninPubSubStatistics($this->_loop));
+		$this->__node->addPlugin(new RatchetPhuninConnections($this->__loop));
+		$this->__node->addPlugin(new RatchetPhuninUptime($this->__loop));
+		$this->__node->addPlugin(new RatchetPhuninMemoryUsage($this->__loop));
+		$this->__node->addPlugin(new RatchetPhuninPubSubStatistics($this->__loop));
 	}
 }
