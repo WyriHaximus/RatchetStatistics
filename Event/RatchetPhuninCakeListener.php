@@ -11,17 +11,17 @@
 
 App::uses('CakeEventListener', 'Event');
 
-App::uses('RatchetPhuninConnections', 'Ratchet.Lib/Phunin');
-App::uses('RatchetMessageQueueGetConnectionsCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('RatchetPhuninConnections', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetConnectionsCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 
-App::uses('RatchetPhuninUptime', 'Ratchet.Lib/Phunin');
-App::uses('RatchetMessageQueueGetUptimeCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('RatchetPhuninUptime', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetUptimeCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 
-App::uses('RatchetPhuninMemoryUsage', 'Ratchet.Lib/Phunin');
-App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'Ratchet.Lib/MessageQueue/Command');
+App::uses('RatchetPhuninMemoryUsage', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 
-App::uses('RatchetPhuninPubSubStatistics', 'Ratchet.Lib/Phunin');
-App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'Ratchet.Lib/MessageQueue/Command/Statistics');
+App::uses('RatchetPhuninPubSubStatistics', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'RatchetStatistics.Lib/MessageQueue/Command/Statistics');
 
 class RatchetPhuninCakeListener implements CakeEventListener {
 
