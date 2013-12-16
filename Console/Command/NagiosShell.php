@@ -1,5 +1,6 @@
 <?php
 
+App::uses('Security', 'Utility');
 App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
 App::uses('RatchetMessageQueueGetConnectionsCommand', 'RatchetStatistics.Lib/MessageQueue/Command/');
 App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'RatchetStatistics.Lib/MessageQueue/Command/');
