@@ -3,6 +3,7 @@ language: php
 php:
   - 5.4
   - 5.5
+  - hhvm
 
 env:
   global:
@@ -16,6 +17,9 @@ env:
     - DB=mysql CAKE_VERSION=2.5
 
 matrix:
+  allow_failures:
+    - php: hhvm
+
   include:
     - php: 5.4
       env:
