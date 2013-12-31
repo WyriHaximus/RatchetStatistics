@@ -13,7 +13,7 @@ RatchetStatistics
 
 This plugin depends on the following plugin and libraries and are pulled in by composer later on:
 
-- [Ratchet](https://github.com/WyriHaximus/RatchetCommands)
+- [RatchetCommands](https://github.com/WyriHaximus/RatchetCommands)
 
 #### 2. Composer ####
 
