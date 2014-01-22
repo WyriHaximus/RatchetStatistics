@@ -18,14 +18,14 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
 /**
  * PhuninNode server
  *
- * @var \PhuninNode\Node
+ * @var \WyriHaximus\PhuninNode\Node
  */
 	private $__node;
 
 /**
  * Configuration object for this plugin,
  *
- * @var \PhuninNode\PluginConfiguration
+ * @var \WyriHaximus\PhuninNode\PluginConfiguration
  */
 	private $__configuration;
 
@@ -47,9 +47,9 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
 /**
  * Sets the PhuninNode server instance for later reference, this plugin doesn't need it but gets it pass anyway due to the interface contract
  *
- * @param \PhuninNode\Node $node
+ * @param \WyriHaximus\PhuninNode\Node $node
  */
-	public function setNode(\PhuninNode\Node $node) {
+	public function setNode(\WyriHaximus\PhuninNode\Node $node) {
 		$this->__node = $node;
 	}
 
@@ -68,12 +68,12 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
  * @param \React\Promise\DeferredResolver $deferredResolver
  */
 	public function getConfiguration(\React\Promise\DeferredResolver $deferredResolver) {
-		if ($this->__configuration instanceof \PhuninNode\PluginConfiguration) {
+		if ($this->__configuration instanceof \WyriHaximus\PhuninNode\PluginConfiguration) {
 			$deferredResolver->resolve($this->__configuration);
 			return;
 		}
 
-		$this->__configuration = new \PhuninNode\PluginConfiguration();
+		$this->__configuration = new \WyriHaximus\PhuninNode\PluginConfiguration();
 		$this->__configuration->setPair('graph_category', 'ratchet');
 		$this->__configuration->setPair('graph_title', 'Pub/Sub Statistics');
 
