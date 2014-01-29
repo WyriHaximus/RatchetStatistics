@@ -51,8 +51,6 @@ class RatchetUptimeListener implements CakeEventListener {
 		$event->result = array(
 			'uptime' => (time() - $this->__startTime),
 		);
-
-		throw new Exception(var_export($event->result, true));
 	}
 
 }
