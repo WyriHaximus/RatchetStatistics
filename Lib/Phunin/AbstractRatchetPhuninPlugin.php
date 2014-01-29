@@ -8,7 +8,7 @@ class AbstractRatchetPhuninPlugin {
 			$values = new \SplObjectStorage;
 
 			foreach ($result as $key => $value) {
-				$values->attach(new \PhuninNode\Value($key, $value));
+				$values->attach(new \WyriHaximus\PhuninNode\Value($key, $value));
 			}
 
 			$deferredResolver->resolve($values);
