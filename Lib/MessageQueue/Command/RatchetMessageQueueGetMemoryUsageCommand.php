@@ -37,7 +37,7 @@ class RatchetMessageQueueGetMemoryUsageCommand extends RatchetMessageQueueComman
 	}
 
 	public function execute($eventSubject) {
-		$event = new CakeEvent('Rachet.WebsocketServer.getMemoryUsage', $this, array());
+		$event = new CakeEvent('RachetStatistics.WebsocketServer.getMemoryUsage', $this, array());
 		CakeEventManager::instance()->dispatch($event);
 
 		return $event->result;

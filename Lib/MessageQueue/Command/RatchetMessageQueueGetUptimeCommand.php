@@ -39,7 +39,7 @@ class RatchetMessageQueueGetUptimeCommand extends RatchetMessageQueueCommand {
 	}
 
 	public function execute($eventSubject) {
-		$event = new CakeEvent('Rachet.WebsocketServer.getUptime', $this, array());
+		$event = new CakeEvent('RachetStatistics.WebsocketServer.getUptime', $this, array());
 		CakeEventManager::instance()->dispatch($event);
 
 		return $event->result;

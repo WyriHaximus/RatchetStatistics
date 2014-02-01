@@ -20,7 +20,7 @@ class RatchetMemoryUsageListener implements CakeEventListener {
  */
 	public function implementedEvents() {
 		return array(
-			'Rachet.WebsocketServer.getMemoryUsage' => 'getMemoryUsage',
+			'RachetStatistics.WebsocketServer.getMemoryUsage' => 'getMemoryUsage',
 		);
 	}
 

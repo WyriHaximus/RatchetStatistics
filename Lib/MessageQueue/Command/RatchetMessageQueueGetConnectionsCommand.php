@@ -37,7 +37,7 @@ class RatchetMessageQueueGetConnectionsCommand extends RatchetMessageQueueComman
 	}
 
 	public function execute($eventSubject) {
-		$event = new CakeEvent('Rachet.WebsocketServer.getConnectionCounts', $this, array());
+		$event = new CakeEvent('RachetStatistics.WebsocketServer.getConnectionCounts', $this, array());
 		CakeEventManager::instance()->dispatch($event);
 
 		return $event->result;

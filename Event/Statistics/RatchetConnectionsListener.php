@@ -46,7 +46,7 @@ class RatchetConnectionsListener implements CakeEventListener {
 			'Rachet.WampServer.onSubscribeNewTopic.connectionCount' => 'onSubscribeNewTopic',
 			'Rachet.WampServer.onSubscribe.connectionCount' => 'onSubscribe',
 			'Rachet.WampServer.onUnSubscribeStaleTopic.connectionCount' => 'onUnSubscribeStaleTopic',
-			'Rachet.WebsocketServer.getConnectionCounts' => 'getConnectionCounts',
+			'RachetStatistics.WebsocketServer.getConnectionCounts' => 'getConnectionCounts',
 		);
 	}
 
