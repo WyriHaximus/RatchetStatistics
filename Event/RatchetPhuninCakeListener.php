@@ -20,8 +20,11 @@ App::uses('RatchetMessageQueueGetUptimeCommand', 'RatchetStatistics.Lib/MessageQ
 App::uses('RatchetPhuninMemoryUsage', 'RatchetStatistics.Lib/Phunin');
 App::uses('RatchetMessageQueueGetMemoryUsageCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 
-App::uses('RatchetPhuninPubSubStatistics', 'RatchetStatistics.Lib/Phunin');
-App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'RatchetStatistics.Lib/MessageQueue/Command/Statistics');
+App::uses('RatchetPhuninPubSub', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetPubSubCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
+
+App::uses('RatchetPhuninEvents', 'RatchetStatistics.Lib/Phunin');
+App::uses('RatchetMessageQueueGetEventsCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 
 class RatchetPhuninCakeListener implements CakeEventListener {
 
@@ -61,6 +64,7 @@ class RatchetPhuninCakeListener implements CakeEventListener {
 		$this->__node->addPlugin(new RatchetPhuninConnections($this->__loop));
 		$this->__node->addPlugin(new RatchetPhuninUptime($this->__loop));
 		$this->__node->addPlugin(new RatchetPhuninMemoryUsage($this->__loop));
-		$this->__node->addPlugin(new RatchetPhuninPubSubStatistics($this->__loop));
+		$this->__node->addPlugin(new RatchetPhuninPubSub($this->__loop));
+		$this->__node->addPlugin(new RatchetPhuninEvents($this->__loop));
 	}
 }

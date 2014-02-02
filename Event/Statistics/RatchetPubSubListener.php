@@ -11,7 +11,7 @@
 
 App::uses('CakeEventListener', 'Event');
 
-class RatchetPubSubStatisticsListener implements CakeEventListener {
+class RatchetPubSubListener implements CakeEventListener {
 
 /**
  * Returns an array with the events this listener hooks into
@@ -21,7 +21,7 @@ class RatchetPubSubStatisticsListener implements CakeEventListener {
 	public function implementedEvents() {
 		return array(
 			'Rachet.WampServer.construct' => 'construct',
-			'Rachet.WebsocketServer.getPubSubStatistics' => 'getPubSubStatistics',
+			'RachetStatistics.WebsocketServer.getPubSub' => 'getPubSub',
 		);
 	}
 
@@ -31,7 +31,6 @@ class RatchetPubSubStatisticsListener implements CakeEventListener {
  * @param CakeEvent $event
  */
 	public function construct(CakeEvent $event) {
-		$this->startTime = time();
 		$this->wampServer = $event->subject();
 	}
 
@@ -40,29 +39,27 @@ class RatchetPubSubStatisticsListener implements CakeEventListener {
  *
  * @param CakeEvent $event
  */
-	public function getPubSubStatistics(CakeEvent $event) {
+	public function getPubSub(CakeEvent $event) {
 		$topics = $this->wampServer->getTopics();
-		$topicCount = count($topics);
+    $topicCount = count($topics);
+		$connections = $this->wampServer->getConnections();
+    $connectionCount = count($connections);
 
-		$subscribers = array();
-		foreach ($topics as $topic) {
-			foreach ($topic as $subscriber) {
-				$subscribers[$subscriber] = true;
-			}
+		$subscribesCount = 0;
+    $subscribersCount = 0;
+		foreach ($connections as $connection) {
+        $count = count($connection['topics']);
+        if ($count > 0) {
+            $subscribesCount += $count;
+            $subscribersCount++;
+        }
 		}
-		$subscribersCount = count($subscribers);
 
-		$avgTopicSubscribers = 0;
-		if ($subscribersCount > 0 && $topicCount > 0) {
-			$avgTopicSubscribers = $topicCount / $subscribersCount;
-		}
 		$event->result = array(
 			'active_topics' => $topicCount,
 			'active_subscribers' => $subscribersCount,
-			'broadcasts' => 0,
-			'broadcasts_sec' => 0,
-			'avg_topics_subscribers' => $avgTopicSubscribers,
+			'active_connections' => $connectionCount,
+			'avg_topics_subscribers' => $subscribesCount / $subscribersCount,
 		);
 	}
-
 }

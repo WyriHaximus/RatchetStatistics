@@ -11,7 +11,7 @@
 
 App::uses('RatchetMessageQueueCommand', 'RatchetCommands.Lib/MessageQueue/Command');
 
-class RatchetMessageQueueGetPubSubStatisticsCommand extends RatchetMessageQueueCommand {
+class RatchetMessageQueueGetPubSubCommand extends RatchetMessageQueueCommand {
 
 	protected $_hash;
 
@@ -37,7 +37,7 @@ class RatchetMessageQueueGetPubSubStatisticsCommand extends RatchetMessageQueueC
 	}
 
 	public function execute($eventSubject) {
-		$event = new CakeEvent('Rachet.WebsocketServer.getPubSubStatistics', $this, array());
+		$event = new CakeEvent('RachetStatistics.WebsocketServer.getPubSub', $this, array());
 		CakeEventManager::instance()->dispatch($event);
 
 		return $event->result;

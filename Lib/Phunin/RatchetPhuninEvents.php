@@ -10,10 +10,10 @@
  */
 
 App::uses('TransportProxy', 'RatchetCommands.Lib/MessageQueue/Transports');
-App::uses('RatchetMessageQueueGetPubSubStatisticsCommand', 'RatchetStatistics.Lib/MessageQueue/Command/Statistics');
+App::uses('RatchetMessageQueueGetEventsCommand', 'RatchetStatistics.Lib/MessageQueue/Command');
 App::uses('AbstractRatchetPhuninPlugin', 'RatchetStatistics.Lib/Phunin');
 
-class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implements \WyriHaximus\PhuninNode\PluginInterface {
+class RatchetPhuninEvents extends AbstractRatchetPhuninPlugin implements \WyriHaximus\PhuninNode\PluginInterface {
 
 /**
  * PhuninNode server
@@ -59,7 +59,7 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
  * @return string
  */
 	public function getSlug() {
-		return 'ratchet_pubsub_statistics';
+		return 'ratchet_events';
 	}
 
 /**
@@ -75,13 +75,13 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
 
 		$this->__configuration = new \WyriHaximus\PhuninNode\PluginConfiguration();
 		$this->__configuration->setPair('graph_category', 'ratchet');
-		$this->__configuration->setPair('graph_title', 'Pub/Sub Statistics');
+		$this->__configuration->setPair('graph_title', 'Events Statistics');
 
-		$this->__configuration->setPair('active_topics.label', 'Active Topics');
-		$this->__configuration->setPair('active_subscribers.label', 'Active Subscribers');
-		$this->__configuration->setPair('broadcasts.label', 'Broadcasts');
-		$this->__configuration->setPair('broadcasts_sec.label', 'Broadcasts/Sec');
-		$this->__configuration->setPair('avg_topics_subscribers.label', 'Average topics per subscriber');
+		$this->__configuration->setPair('broadcasts_incoming.label', 'Incoming Broadcasts');
+		$this->__configuration->setPair('broadcasts_outgoing.label', 'Outgoing Broadcasts');
+		$this->__configuration->setPair('rpc_success.label', 'Successful RPC calls');
+		$this->__configuration->setPair('rpc_failed.label', 'Failed RPC calls');
+		$this->__configuration->setPair('rpc_blocked.label', 'Blocked RPC calls');
 
 		$deferredResolver->resolve($this->__configuration);
 	}
@@ -92,7 +92,7 @@ class RatchetPhuninPubSubStatistics extends AbstractRatchetPhuninPlugin implemen
  * @param \React\Promise\DeferredResolver $deferredResolver
  */
 	public function getValues(\React\Promise\DeferredResolver $deferredResolver) {
-		$command = new RatchetMessageQueueGetPubSubStatisticsCommand();
+		$command = new RatchetMessageQueueGetEventsCommand();
 		$command->setDeferedResolver($this->_resultDecorator($deferredResolver));
 		$command->setHash(Security::hash(serialize(Configure::read('PhuninCake.Node')), 'sha256', true));
 		TransportProxy::instance()->queueMessage($command);
