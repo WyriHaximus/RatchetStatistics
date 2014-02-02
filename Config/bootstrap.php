@@ -24,8 +24,11 @@ CakeEventManager::instance()->attach(new RatchetUptimeListener());
 App::uses('RatchetMemoryUsageListener', 'RatchetStatistics.Event/Statistics');
 CakeEventManager::instance()->attach(new RatchetMemoryUsageListener());
 
-App::uses('RatchetPubSubStatisticsListener', 'RatchetStatistics.Event/Statistics');
-CakeEventManager::instance()->attach(new RatchetPubSubStatisticsListener());
+App::uses('RatchetPubSubListener', 'RatchetStatistics.Event/Statistics');
+CakeEventManager::instance()->attach(new RatchetPubSubListener());
+
+App::uses('RatchetEventsListener', 'RatchetStatistics.Event/Statistics');
+CakeEventManager::instance()->attach(new RatchetEventsListener());
 
 /**
  * PhuninCake listener
