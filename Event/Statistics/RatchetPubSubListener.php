@@ -55,11 +55,16 @@ class RatchetPubSubListener implements CakeEventListener {
         }
 		}
 
+		$avg_topics_subscribers = 0;
+		if ($subscribersCount > 0 && $subscribesCount > 0) {
+			$avg_topics_subscribers = $subscribesCount / $subscribersCount;
+		}
+
 		$event->result = array(
 			'active_topics' => $topicCount,
 			'active_subscribers' => $subscribersCount,
 			'active_connections' => $connectionCount,
-			'avg_topics_subscribers' => $subscribesCount / $subscribersCount,
+			'avg_topics_subscribers' => $avg_topics_subscribers,
 		);
 	}
 }
