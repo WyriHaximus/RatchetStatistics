@@ -19,8 +19,8 @@ This plugin depends on the following plugin and libraries and are pulled in by c
 
 Make sure you have [composer](http://getcomposer.org/) installed and configured with the autoloader registering during bootstrap as described [here](http://ceeram.github.io/blog/2013/02/22/using-composer-with-cakephp-2-dot-x/). Make sure you have a composer.json and add the following to your required section.
 
-```json
-"wyrihaximus/ratchet-statistics": "dev-master"
+```
+composer require wyrihaximus/ratchet-statistics 
 ```
 
 When you've set everything up, run `composer install`.
