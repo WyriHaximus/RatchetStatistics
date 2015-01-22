@@ -21,14 +21,11 @@
   ],
   "require": {
       "composer/installers": "*",
-      "wyrihaximus/ratchet": "dev-master",
-      "wyrihaximus/ratchet-commands": "dev-master"
+      "wyrihaximus/ratchet": "^0.1",
+      "wyrihaximus/ratchet-commands": "^0.1"
   },
   "require-dev": {
-      "wyrihaximus/phunin-cake": "dev-master"
-  },
-  "suggest": {
-      "wyrihaximus/phunin-cake": "dev-master"
+      "wyrihaximus/phunin-cake": "^0.1.1"
   },
   "support": {
     "issues": "https://github.com/WyriHaximus/RatchetStatistics/issues",
